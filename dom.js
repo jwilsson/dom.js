@@ -11,7 +11,7 @@
 		constructor: $,
 
 		addClass: function (classname) {
-			this.each(function () {
+			return this.each(function () {
 				this.classList.add(classname);
 			});
 		},
@@ -25,7 +25,7 @@
 				return this.elements[0].getAttribute(name) || '';
 			}
 
-			this.each(function () {
+			return this.each(function () {
 				this.setAttribute(name, value);
 			});
 		},
@@ -35,7 +35,7 @@
 				return window.getComputedStyle(this.elements[0]).getPropertyValue(name);
 			}
 
-			this.each(function () {
+			return this.each(function () {
 				this.style[name] = value;
 			});
 		},
@@ -46,6 +46,8 @@
 			for (; i < this.length; i++) {
 				callback.call(this.elements[i], i);
 			}
+
+			return this;
 		},
 
 		html: function (html) {
@@ -53,25 +55,25 @@
 				return this.elements[0].innerHTML;
 			}
 
-			this.each(function () {
+			return this.each(function () {
 				this.innerHTML = html;
 			});
 		},
 
 		off: function (event, callback) {
-			this.each(function () {
+			return this.each(function () {
 				this.removeEventListener(event, callback);
 			});
 		},
 
 		on: function (event, callback) {
-			this.each(function () {
+			return this.each(function () {
 				this.addEventListener(event, callback, false);
 			});
 		},
 
 		removeClass: function (classname) {
-			this.each(function () {
+			return this.each(function () {
 				this.classList.remove(classname);
 			});
 		},
@@ -81,19 +83,19 @@
 				return this.elements[0].textContent;
 			}
 
-			this.each(function () {
+			return this.each(function () {
 				this.textContent = text;
 			});
 		},
 
 		toggleClass: function (classname) {
-			this.each(function () {
+			return this.each(function () {
 				this.classList.toggle(classname);
 			});
 		},
 
 		trigger: function (event) {
-			this.each(function () {
+			return this.each(function () {
 				this.dispatchEvent(event);
 			});
 		}
