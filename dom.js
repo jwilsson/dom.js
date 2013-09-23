@@ -72,6 +72,13 @@
 			});
 		},
 
+		next: function () {
+			this.elements = [this.elements[0].nextElementSibling];
+			this.length = 1;
+
+			return this;
+		},
+
 		off: function (event, callback) {
 			return this.each(function () {
 				this.removeEventListener(event, callback);
@@ -82,6 +89,15 @@
 			return this.each(function () {
 				this.addEventListener(event, callback, false);
 			});
+		},
+
+		prev: function () {
+			this.elements = [this.elements[0].previousElementSibling];
+			this.length = 1;
+
+			console.log(this.elements);
+
+			return this;
 		},
 
 		remove: function () {
