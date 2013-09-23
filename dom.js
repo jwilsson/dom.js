@@ -41,11 +41,23 @@
 		},
 
 		each: function (callback) {
-			var i = 0;
+			var i = 0,
+				result;
 
 			for (; i < this.length; i++) {
-				callback.call(this.elements[i], i);
+				result = callback.call(this.elements[i], i);
+
+				if (result === false) {
+					break;
+				}
 			}
+
+			return this;
+		},
+
+		find: function (selector) {
+			this.elements = this.elements[0].querySelectorAll(selector);
+			this.length = this.elements.length;
 
 			return this;
 		},
