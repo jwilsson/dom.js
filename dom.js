@@ -17,7 +17,11 @@
 		},
 
 		attr: function (name, value) {
-			if (value === undefined && this.elements[0].hasAttribute(name)) {
+			if (value === undefined) {
+				if (!this.elements[0].hasAttribute(name)) {
+					return '';
+				}
+
 				return this.elements[0].getAttribute(name) || '';
 			}
 
