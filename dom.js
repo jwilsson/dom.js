@@ -155,6 +155,16 @@
 			return this.each(function () {
 				this.dispatchEvent(event);
 			});
+		},
+
+		val: function (value) {
+			if (value === undefined) {
+				return this.elements[0].value || '';
+			}
+
+			return this.each(function () {
+				this.value = value;
+			});
 		}
 	};
 
