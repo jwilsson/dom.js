@@ -77,11 +77,7 @@
 		}
 	};
 
-	function $_ (selector) {
+	window.$ = function (selector) {
 		return new $(selector);
-	}
-
-	return (window.$ = $_);
-
-	window.$ = $;
+	};
 }(window, document));
