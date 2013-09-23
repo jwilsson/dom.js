@@ -123,6 +123,12 @@
 			});
 		},
 
+		removeAttr: function (name) {
+			return this.each(function () {
+				this.removeAttribute(name);
+			});
+		},
+
 		removeClass: function (classname) {
 			return this.each(function () {
 				this.classList.remove(classname);
