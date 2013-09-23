@@ -95,8 +95,6 @@
 			this.elements = [this.elements[0].previousElementSibling];
 			this.length = 1;
 
-			console.log(this.elements);
-
 			return this;
 		},
 
