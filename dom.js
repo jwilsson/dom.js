@@ -58,6 +58,18 @@
 			});
 		},
 
+		off: function (event, callback) {
+			this.each(function () {
+				this.removeEventListener(event, callback);
+			});
+		},
+
+		on: function (event, callback) {
+			this.each(function () {
+				this.addEventListener(event, callback, false);
+			});
+		},
+
 		removeClass: function (classname) {
 			this.each(function () {
 				this.classList.remove(classname);
@@ -77,6 +89,12 @@
 		toggleClass: function (classname) {
 			this.each(function () {
 				this.classList.toggle(classname);
+			});
+		},
+
+		trigger: function (event) {
+			this.each(function () {
+				this.dispatchEvent(event);
 			});
 		}
 	};
