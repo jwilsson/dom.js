@@ -30,6 +30,13 @@
 			});
 		},
 
+		children: function () {
+			this.elements = this.elements[0].children;
+			this.length = this.elements.length;
+
+			return this;
+		},
+
 		css: function (name, value) {
 			if (value === undefined) {
 				return window.getComputedStyle(this.elements[0]).getPropertyValue(name);
