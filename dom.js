@@ -103,6 +103,13 @@
 			});
 		},
 
+		parent: function () {
+			this.elements = [this.elements[0].parentNode];
+			this.length = 1;
+
+			return this;
+		},
+
 		prev: function () {
 			this.elements = [this.elements[0].previousElementSibling];
 			this.length = 1;
