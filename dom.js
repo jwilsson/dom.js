@@ -79,9 +79,9 @@
 
 	function $_ (selector) {
 		return new $(selector);
-    }
+	}
 
-    return (window.$ = $_);
+	return (window.$ = $_);
 
 	window.$ = $;
 }(window, document));
