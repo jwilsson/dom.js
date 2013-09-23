@@ -84,6 +84,12 @@
 			});
 		},
 
+		remove: function () {
+			return this.each(function () {
+				this.parentNode.removeChild(this);
+			});
+		},
+
 		removeClass: function (classname) {
 			return this.each(function () {
 				this.classList.remove(classname);
