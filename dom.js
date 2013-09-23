@@ -1,7 +1,12 @@
 ;(function (window, document, undefined) {
 	var $ = function (selector) {
-		this.elements = document.querySelectorAll(selector);
-		this.length = this.elements.length;
+		if (selector.nodeType) {
+			this.elements = [selector];
+		} else {
+			this.elements = document.querySelectorAll(selector);
+		}
+
+		this.length = this.elements.length || 1;
 	};
 
 	$.prototype = {
@@ -31,7 +36,7 @@
 		},
 
 		children: function () {
-			this.elements = this.elements[0].children;
+			this.elements = this.elements[0].children();
 			this.length = this.elements.length;
 
 			return this;
