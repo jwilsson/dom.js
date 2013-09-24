@@ -74,6 +74,10 @@
 			return this;
 		},
 
+		hasClass: function (classname) {
+			return this.elements[0].classList.contains(classname);
+		},
+
 		html: function (html) {
 			if (html === undefined) {
 				return this.elements[0].innerHTML;
