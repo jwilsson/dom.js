@@ -5,7 +5,7 @@
 		if (selector.nodeType) {
 			this.elements = [selector];
 		} else {
-			this.elements = document.querySelectorAll(selector);
+			this.elements = [].slice.call(document.querySelectorAll(selector));
 		}
 
 		this.length = this.elements.length;
