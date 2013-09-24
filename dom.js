@@ -8,7 +8,7 @@
 			this.elements = document.querySelectorAll(selector);
 		}
 
-		this.length = this.elements.length || 1;
+		this.length = this.elements.length;
 	};
 
 	$.prototype = {
