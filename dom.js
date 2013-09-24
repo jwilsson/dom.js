@@ -12,6 +12,7 @@
 	$.prototype = {
 		elements: [],
 		length: 0,
+		matches: null,
 
 		constructor: $,
 
@@ -86,6 +87,20 @@
 			return this.each(function () {
 				this.innerHTML = html;
 			});
+		},
+
+		is: function (selector) {
+			var self = this;
+
+			['ms', 'moz', 'o', 'webkit'].forEach(function (prefix) {
+				var method = prefix + 'MatchesSelector';
+
+				if (document.documentElement[method]) {
+					self.matches = method;
+				}
+			});
+
+			return self.elements[0][self.matches](selector);
 		},
 
 		next: function () {
