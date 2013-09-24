@@ -26,11 +26,7 @@
 
 		attr: function (name, value) {
 			if (value === undefined) {
-				if (!this.elements[0].hasAttribute(name)) {
-					return '';
-				}
-
-				return this.elements[0].getAttribute(name) || '';
+				return this.elements[0].getAttribute(name) || null;
 			}
 
 			return this.each(function () {
