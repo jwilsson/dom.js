@@ -1,4 +1,6 @@
 ;(function (window, document, undefined) {
+	'use strict';
+	
 	var $ = function (selector) {
 		if (selector.nodeType) {
 			this.elements = [selector];
