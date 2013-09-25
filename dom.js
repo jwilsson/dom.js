@@ -1,6 +1,6 @@
 ;(function (window, document, undefined) {
 	'use strict';
-	
+
 	var $ = function (selector) {
 		if (selector.nodeType) {
 			this.elements = [selector];
@@ -62,6 +62,23 @@
 					break;
 				}
 			}
+
+			return this;
+		},
+
+		filter: function (selector) {
+			var newElements = [];
+
+			this.each(function () {
+				var element = new $(this);
+
+				if (element.is(selector)) {
+					newElements.push(this);
+				}
+			});
+
+			this.elements = newElements;
+			this.length = this.elements.length;
 
 			return this;
 		},
