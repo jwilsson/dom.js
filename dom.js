@@ -105,17 +105,19 @@
 		},
 
 		is: function (selector) {
-			var self = this;
+			var _this = this;
 
-			['ms', 'moz', 'o', 'webkit'].forEach(function (prefix) {
-				var method = prefix + 'MatchesSelector';
+			if (!_this.matches) {
+				['ms', 'moz', 'o', 'webkit'].forEach(function (prefix) {
+					var method = prefix + 'MatchesSelector';
 
-				if (document.documentElement[method]) {
-					self.matches = method;
-				}
-			});
+					if (document.documentElement[method]) {
+						_this.matches = method;
+					}
+				});
+			}
 
-			return self.elements[0][self.matches](selector);
+			return _this.elements[0][_this.matches](selector);
 		},
 
 		next: function () {
