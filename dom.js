@@ -135,7 +135,7 @@
 
 		on: function (event, callback) {
 			return this.each(function () {
-				this.addEventListener(event, callback, false);
+				this.addEventListener(event, callback);
 			});
 		},
 
