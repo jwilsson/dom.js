@@ -108,9 +108,7 @@
 			var _this = this;
 
 			if (!_this.matches) {
-				['ms', 'moz', 'o', 'webkit'].forEach(function (prefix) {
-					var method = prefix + 'MatchesSelector';
-
+				['msMatchesSelector', 'mozMatchesSelector', 'webkitMatchesSelector', 'matches'].forEach(function (method) {
 					if (document.documentElement[method]) {
 						_this.matches = method;
 					}
