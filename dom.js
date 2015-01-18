@@ -105,17 +105,15 @@
         },
 
         is: function (selector) {
-            var _this = this;
-
-            if (!_this.matches) {
+            if (!this.matches) {
                 ['msMatchesSelector', 'mozMatchesSelector', 'webkitMatchesSelector', 'matches'].forEach(function (method) {
                     if (document.documentElement[method]) {
-                        _this.matches = method;
+                        this.matches = method;
                     }
-                });
+                }, this);
             }
 
-            return _this.elements[0][_this.matches](selector);
+            return this.elements[0][this.matches](selector);
         },
 
         next: function () {
