@@ -106,7 +106,7 @@
 
         is: function (selector) {
             if (!this.matches) {
-                ['msMatchesSelector', 'mozMatchesSelector', 'webkitMatchesSelector', 'matches'].forEach(function (method) {
+                ['msMatchesSelector', 'webkitMatchesSelector', 'matches'].forEach(function (method) {
                     if (document.documentElement[method]) {
                         this.matches = method;
                     }
